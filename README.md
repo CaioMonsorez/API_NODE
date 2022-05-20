@@ -318,3 +318,11 @@ https://blog.rocketseat.com.br/axios-um-cliente-http-full-stack/
 https://medium.com/geekculture/nodejs-express-axios-and-the-basic-set-up-fe88a0b75dca
 
 https://www.freelancinggig.com/blog/2018/11/02/what-is-the-difference-between-api-and-rest-api/
+
+https://prettier.io/docs/en/install.html
+
+https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose
+
+https://www.freecodecamp.org/news/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2/
+
+https://youtu.be/Oe421EPjeBE
