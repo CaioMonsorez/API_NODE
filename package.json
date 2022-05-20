@@ -11,5 +11,18 @@
   "dependencies": {
     "axios": "^0.27.2",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
+    "nodemon": "^2.0.16",
+    "prettier": "2.6.2"
+  },
+  "roteiros": {
+    "format": "prettier --write \"src/**/*.{js,json}\"",
+    "lint": "eslint src/**",
+    "start":"nodemon src/app.js"
   }
 }

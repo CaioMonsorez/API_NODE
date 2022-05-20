@@ -168,6 +168,145 @@ npm i axios express
 
 Dependências de desenvolvimento são pacotes que você baixa para o desenvolvimento e teste local de seus projetos e não são exigidos pelo aplicativo no estágio de produção.
 
+
+* Installa o Pacote PRETTIER
+
+~~~ 
+
+npm install --save-dev --save-exact prettier
+
+~~~
+
+
+Em seguida, crie um arquivo de configuração vazio para que os editores e outras ferramentas saibam que você está usando o Prettier:
+
+
+~~~
+
+echo {}> .prettierrc.json
+
+
+~~~
+
+
+Em seguida, crie um arquivo .prettierignore para que a CLI e os editores do Prettier saibam quais arquivos não devem ser formatados. Aqui está um exemplo:
+
+
+
+
+* 5 - Instale o ESLint
+
+
+De acordo com os documentos oficiais, o ESLint é uma ferramenta para identificar e relatar padrões encontrados no código ECMAScript/JavaScript , com o objetivo de tornar o código mais consistente e evitar bugs
+
+As etapas abaixo são diretamente de sua documentação . Escreva a linha de comando abaixo em seu terminal integrado
+
+
+
+
+~~~
+
+
+npm install eslint --save-dev
+
+
+~~~
+
+
+você deve então configurar um arquivo de configuração, e a maneira mais fácil de fazer isso é usar o --initsinalizador: isso novamente fará algumas perguntas no seu terminal, siga as instruções
+
+
+
+~~~
+
+
+npx eslint --init
+
+Deseja criar o @eslint/create-config [Yes]
+
+✔ How would you like to use ESLint? · problems
+✔ What type of modules does your project use? · commonjs
+✔ Which framework does your project use? · react
+✔ Does your project use TypeScript? · No 
+✔ Where does your code run? · browser
+✔ What format do you want your config file to be in? · JavaScript
+eslint-plugin-react@latest
+? Would you like to install them now with npm? › Yes
+
+
+~~~
+
+
+
+Nota: --init pressupõe que você já tenha um package.jsonarquivo. No nosso caso já criamos package.json executando npm init.
+
+
+
+
+A linha de comando abaixo desativa todas as regras que são desnecessárias ou podem entrar em conflito com [Prettier].
+
+
+~~~
+
+npm install --save-dev eslint-config-prettier
+
+~~~
+
+Agora você pode executar a ferramenta ESLint passando o comando abaixo
+
+
+~~~
+
+eslint src/**
+
+~~~
+
+
+* 6 - Instale o Nodemon
+
+De acordo com o site, o nodemon é uma ferramenta utilitária que monitorará quaisquer alterações feitas em sua pasta de origem e reiniciará automaticamente seu servidor.
+
+Use a linha de comando abaixo para instalar o nodemon como uma dependência de desenvolvimento.
+
+
+~~~~
+npm install --save-dev nodemon
+
+~~~~
+
+* 7 - Agora, atualize o package.json
+
+Adicione os scripts abaixo. Scripts são tipicamente comandos ou sequências de comandos que normalmente seriam executados no terminal.
+
+
+~~~
+
+"roteiros": {
+"format": "prettier --write \"src/**/*.{js,json}\"",
+"lint": "eslint src/**",
+"start":"nodemon src/app.js"
+},
+
+~~~
+
+Adicioná-lo nos scripts agiliza o processo, agora em vez de executar o comando prettier — write \”src/**/*.{js,json}\” no seu terminal toda vez que você quiser formatar o documento, tudo o que você precisa executar é este comando 
+
+~~~
+npm run format
+~~~
+
+
+
+
+
+* 8 O Primeiro Hello World!
+
+Vamos criar um servidor HTTP, o servidor escutará a porta 3000, e enviará Hello, World! para o navegador mediante uma solicitação GET.
+
+
+
+
+
 # Referencias
 
 https://medium.com/trainingcenter/axios-ou-fetch-765e5db9dd59
