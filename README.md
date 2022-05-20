@@ -321,7 +321,7 @@ O CONNECT método estabelece um túnel para o servidor identificado pelo recurso
 O OPTIONS método descreve as opções de comunicação para o recurso de destino.
 
 * TRACE
-O TRACE método executa um teste de loopback de mensagem ao longo do caminho para o recurso de destino.
+O TRACE método executa um teste de loopback de mensagem ao longo do caminho para o recurso de destino. O trace é muito usado para testar o tempo que uma req leva para ir do navegador até o sistema e retornar.
 
 * PATCH
 O PATCH método aplica modificações parciais a um recurso.
@@ -349,14 +349,20 @@ const express = require("express"); //Carrega a biblioteca express
 
 const app = express() // app se assume express 
 
-app.get("/", (req,res) =>{ // inicio da solicitação como requisicao e resposta de parametros
+
+app.get("/", (req,res) =>{ // inicia a rota da solicitação. A Rota = localhost:3000
+//Toda vez que eu abrir o localhost:3000 ele vai retornar a requisição no send. Então nessa rota
+//ele vai solicitar a requisição e a resposta
 
 
-res.send("HelloWorlds!"); //  Se a resposta da requisição houver sucesso, mostra HelloWord
+res.send("HelloWorlds!"); //   resposta da requisição quando abre a rota
 
 });
 
-app.listen(3000, () => { // resposta da requisição dentro do servidor 3000
+
+app.listen(3000, () => { //  indica qual vai ser a porta tcp que o sistema vai escutar
+//seu aplicativo vai pedir para sistema operacional redirecionar tudo que chegar na porta tcp 3000 para ele.
+//Ai quando chegar algum dado na porta tcp 3000 o S.O. chama o seu app para tratar
 
 console.log('servidor rodando em 3000')
 
@@ -367,6 +373,15 @@ console.log('servidor rodando em 3000')
 
 
 O aplicativo responde com “Hello World!” para solicitações à URL raiz ( /) ou rota.
+
+
+
+
+
+
+
+
+
 
 # Referencias
 
