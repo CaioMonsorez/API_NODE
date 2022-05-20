@@ -10,8 +10,6 @@ Express e then > Resposta  / POST
 
 Axios é uma biblioteca famosa do JavaScript muito utilizada para fazer solicitações HTTP do Node.js
 
-Mais informaçoes sobre o AXIOS 
-
  Características
 
 
@@ -28,7 +26,6 @@ Mais informaçoes sobre o AXIOS
 
 # Projeto
 
-Realizaremos uma configuração básica do NodeJS e escreveremos uma API JSON de back-end muito simples.
 Esta API terá como base obter fatos aleatórios sobre gatos através da lista deste endpoint:
 
 
@@ -42,12 +39,12 @@ Rota: https://catfact.ninja/facts
 * Instalar e inicializar o NodeJS
 * Instalar dependências ( axios, express )
 * Instale dependências de desenvolvimento ( prettier, eslint, nodemon, cross-env )
-* Crie seu primeiro servidor HTTP (“Hello, World!”)
+* Primeiro servidor HTTP (“Hello, World!”)
 * Criar rotas
 * Construir uma API JSON
 
 
-Estaremos construindo uma API que busque dados desta rota de API:
+Construiremos uma API que busque dados desta rota de API:
 
 Rota: https://catfact.ninja/facts
 
@@ -296,6 +293,38 @@ npm run format
 ~~~
 
 
+* 8 - Métodos de solicitação HTTP
+
+O HTTP define um conjunto de métodos de solicitação para indicar a ação desejada a ser executada para um determinado recurso. 
+
+Embora também possam ser substantivos, esses métodos de solicitação às vezes são chamados de verbos HTTP . Cada um deles implementa uma semântica diferente, mas alguns recursos comuns são compartilhados por um grupo deles: por exemplo, um método de solicitação pode ser seguro , idempotente ou armazenável em cache .
+
+* GET
+O GET método solicita uma representação do recurso especificado. Solicitações usando GET devem apenas obter dados.
+
+* HEAD
+O HEAD método solicita uma resposta idêntica a uma GET solicitação, mas sem o corpo da resposta.
+
+* POST
+O POST método envia uma entidade ao recurso especificado, geralmente causando uma alteração no estado ou efeitos colaterais no servidor.
+
+* PUT
+O PUT método substitui todas as representações atuais do recurso de destino pela carga útil da solicitação.
+
+* DELETE
+O DELETE método exclui o recurso especificado.
+
+* CONNECT
+O CONNECT método estabelece um túnel para o servidor identificado pelo recurso de destino.
+
+* OPTIONS
+O OPTIONS método descreve as opções de comunicação para o recurso de destino.
+
+* TRACE
+O TRACE método executa um teste de loopback de mensagem ao longo do caminho para o recurso de destino.
+
+* PATCH
+O PATCH método aplica modificações parciais a um recurso.
 
 
 
@@ -304,8 +333,40 @@ npm run format
 Vamos criar um servidor HTTP, o servidor escutará a porta 3000, e enviará Hello, World! para o navegador mediante uma solicitação GET.
 
 
+Agora, vamos criar uma pasta chamada src, src significa fonte. O diretório src conterá todo o material fonte para construir o projeto. Não é obrigatório fazer isso, mas é considerado uma boa prática.
 
 
+Não é necessário usar uma estrutura de pastas padrão, mas seguir uma estrutura adequada indicará como você poderá dimensionar a base de código existente no futuro e também ajudará na manutenção e legibilidade do código.
+
+Dentro da pasta src, crie o arquivo app.js
+
+Este aplicativo iniciará um servidor e escutará na porta 3000 para conexões
+
+
+~~~ JavaScript
+
+const express = require("express"); //Carrega a biblioteca express
+
+const app = express() // app se assume express 
+
+app.get("/", (req,res) =>{ // inicio da solicitação como requisicao e resposta de parametros
+
+
+res.send("HelloWorlds!"); //  Se a resposta da requisição houver sucesso, mostra HelloWord
+
+});
+
+app.listen(3000, () => { // resposta da requisição dentro do servidor 3000
+
+console.log('servidor rodando em 3000')
+
+})
+
+
+~~~
+
+
+O aplicativo responde com “Hello World!” para solicitações à URL raiz ( /) ou rota.
 
 # Referencias
 
@@ -326,3 +387,6 @@ https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mo
 https://www.freecodecamp.org/news/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2/
 
 https://youtu.be/Oe421EPjeBE
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
