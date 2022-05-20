@@ -156,13 +156,17 @@ Is this OK? (yes) yes
 Você sempre pode editar esses valores mais tarde em package.json. 
 
 
-3 - Instale as dependencias (AXIOS E EXPRESS)
+* 3 - Instale as dependencias (AXIOS E EXPRESS)
 
 
 ~~~
 npm i axios express
 ~~~ 
 
+
+* 4 - Instale as dependencias do desenvolvimento
+
+Dependências de desenvolvimento são pacotes que você baixa para o desenvolvimento e teste local de seus projetos e não são exigidos pelo aplicativo no estágio de produção.
 
 # Referencias
 
