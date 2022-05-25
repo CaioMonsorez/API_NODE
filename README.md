@@ -374,10 +374,33 @@ console.log('servidor rodando em 3000')
 
 O aplicativo responde com “Hello World!” para solicitações à URL raiz ( /) ou rota.
 
+* 9 - Execute testes e inicie e reinicie seu aplicativo automaticamente
+
+O nodemon é uma biblioteca que ajuda no desenvolvimento de sistemas com o Node. js reiniciando automaticamente o servidor. Imagine a seguinte situação, você está desenvolvendo uma aplicação com o Node, e criou uma rota, para acessá-la, é preciso reiniciar o servidor.
 
 
+~~~
+npm install --save dev nodemon
 
+~~~
 
+Para rodar o aplicativo, é necessário configurar os Scripts que estão no Package.json.
+
+Determine um caminho no package.json, em Scripts uma variável para rodar a aplicação API que criamos.
+node src/app.js
+
+~~~
+ "scripts": {
+    "test": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+~~~
+
+* 10- Instalar o Thunder Cliente
+
+o Thunder Client é uma interface gráfica para você testar suas requisições HTTP.
+
+Você pode instalar o Thunder Cliente nas extenções do VSCode,
 
 
 
